@@ -122,6 +122,7 @@ const run = async () => {
         const user = state.users.find((user) => user._id === u._id);
         if (user) user.gameState = u.gameState;
       });
+      console.log(state.users);
       io.emit('game:restartDeal', { deck, usersAtTable: state.users, indexOfSB });
     });
     socket.on('disconnect', () => {
