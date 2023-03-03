@@ -141,24 +141,22 @@ const Poker_table = (): JSX.Element => {
             <SoundOnOff />
           </div>
           <div className='poker__container'>
-            <img
-              className='poker-table__table-image'
-              src={require('../../assets/poker_table.jpg')}
-              alt='poker table'
-            />
-            <div className='card__container'>
-              <RenderCards cards={showCards} />
-            </div>
-            <div className='bank__container'>
-              <img src={require('../../assets/chip-bank.png')} alt='chip bank' />
-              <h4>{bank} $</h4>
-            </div>
-            {Boolean(usersAtTable.length) && (
-              <div className='players-in-deal'>
-                <RenderPlayer timer={timer} users={usersAtTable} />
+            <div className='poker-table__table-image'>
+              <div className='bank__container'>
+                <img src={require('../../assets/chip-bank.png')} alt='chip bank' />
+                <h4>{bank} $</h4>
               </div>
-            )}
+              {Boolean(usersAtTable.length) && (
+                <div className='players-in-deal'>
+                  <RenderPlayer timer={timer} users={usersAtTable} />
+                </div>
+              )}
+            </div>
           </div>
+          <div className='card__container'>
+            <RenderCards cards={showCards} />
+          </div>
+
           <div className='poker-table__seat-btn action__buttons'>
             {waitToSeatIDs.includes(_id) ? <SeatOutBtn /> : <SeatBtn />}
           </div>
