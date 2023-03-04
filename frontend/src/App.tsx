@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
-import StartPage from './pages/StartPage';
+import StartPage from './pages/StartPage/StartPage';
 import PlayerRoom from './pages/PlayerRoom';
 import TableRoom from './pages/TableRoom';
 import Auth from './components/Auth/Auth';

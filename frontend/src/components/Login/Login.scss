@@ -45,7 +45,11 @@
 }
 
 @media (max-width: 850px) {
-	.submit__success-msg {
-		font-size: 1.2rem;
-	}
+  .submit__success-msg {
+    font-size: 1.2rem;
+    margin: 10px 0;
+  }
+  .button__back {
+    margin-top: 10px;
+  }
 }

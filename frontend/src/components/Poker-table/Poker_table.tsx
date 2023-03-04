@@ -156,13 +156,14 @@ const Poker_table = (): JSX.Element => {
           <div className='card__container'>
             <RenderCards cards={showCards} />
           </div>
-
-          <div className='poker-table__seat-btn action__buttons'>
-            {waitToSeatIDs.includes(_id) ? <SeatOutBtn /> : <SeatBtn />}
-          </div>
-          <div className='action__bar'>
+          <div className='poker__btns'>
+            {' '}
+            <div className='poker-table__seat-btn action__buttons'>
+              {waitToSeatIDs.includes(_id) ? <SeatOutBtn /> : <SeatBtn />}
+            </div>
+            <div className='action__bar'></div>
             {currentUser && currentUser._id === _id && (
-              <div>
+              <div className='action__btns-wrap'>
                 <div className='action__buttons'>
                   <button className='action__buttons__fold' onClick={handleFold}>
                     {t('fold')}
