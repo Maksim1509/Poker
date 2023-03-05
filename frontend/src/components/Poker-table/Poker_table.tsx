@@ -134,75 +134,70 @@ const Poker_table = (): JSX.Element => {
   };
 
   return (
-    <div className='poker-table__wrapper'>
-      <div className='poker__background'>
-        <div className='poker-table__container gradient-border' id='box'>
-          <div className='additional-features'>
-            <SoundOnOff />
+    <div className='poker-table__wrapper gradient-border' id='box'>
+      <div className='poker-table'>
+        <div className='additional-features'>
+          <SoundOnOff />
+        </div>
+        <div className='bank__container'>
+          <h4>{bank} $</h4>
+          <img src={require('../../assets/chip-bank.png')} alt='chip bank' />
+        </div>
+        {Boolean(usersAtTable.length) && (
+          <div className='players-in-deal'>
+            <RenderPlayer timer={timer} users={usersAtTable} />
           </div>
-          <div className='poker__container'>
-            <div className='poker-table__table-image'>
-              <div className='bank__container'>
-                <img src={require('../../assets/chip-bank.png')} alt='chip bank' />
-                <h4>{bank} $</h4>
+        )}
+
+        <div className='card__container'>
+          <RenderCards cards={showCards} />
+        </div>
+        <div className='poker__btns'>
+          {' '}
+          <div className='poker-table__seat-btn action__buttons'>
+            {waitToSeatIDs.includes(_id) ? <SeatOutBtn /> : <SeatBtn />}
+          </div>
+          <div className='action__bar'></div>
+          {currentUser && currentUser._id === _id && (
+            <div className='action__btns-wrap'>
+              <div className='action__buttons'>
+                <button className='action__buttons__fold' onClick={handleFold}>
+                  {t('fold')}
+                </button>
+                {!!currentBet && (
+                  <button className='action__buttons__Call' onClick={handleCall}>
+                    {t('call')}
+                  </button>
+                )}
+                {userOptions.includes('check') && (
+                  <button className='action__buttons__Call' onClick={handleCheck}>
+                    {t('check')}
+                  </button>
+                )}
+                {currentValue <= currentUser.gameState.stack && usersCount > usersAllin + 1 && (
+                  <button
+                    className='action__buttons__RaiseTo'
+                    onClick={() => handleBet({ _id, betSize: currentValue })}
+                  >
+                    {t('raise to')}
+                  </button>
+                )}
               </div>
-              {Boolean(usersAtTable.length) && (
-                <div className='players-in-deal'>
-                  <RenderPlayer timer={timer} users={usersAtTable} />
+              {currentValue <= currentUser.gameState.stack && usersCount > usersAllin + 1 && (
+                <div className='action__bar__slider'>
+                  <CustomizedSlider
+                    currentValue={currentValue}
+                    setCurrentValue={setCurrentValue}
+                    minValue={minBet}
+                    maxValue={maxBet}
+                  />
                 </div>
               )}
             </div>
-          </div>
-          <div className='card__container'>
-            <RenderCards cards={showCards} />
-          </div>
-          <div className='poker__btns'>
-            {' '}
-            <div className='poker-table__seat-btn action__buttons'>
-              {waitToSeatIDs.includes(_id) ? <SeatOutBtn /> : <SeatBtn />}
-            </div>
-            <div className='action__bar'></div>
-            {currentUser && currentUser._id === _id && (
-              <div className='action__btns-wrap'>
-                <div className='action__buttons'>
-                  <button className='action__buttons__fold' onClick={handleFold}>
-                    {t('fold')}
-                  </button>
-                  {!!currentBet && (
-                    <button className='action__buttons__Call' onClick={handleCall}>
-                      {t('call')}
-                    </button>
-                  )}
-                  {userOptions.includes('check') && (
-                    <button className='action__buttons__Call' onClick={handleCheck}>
-                      {t('check')}
-                    </button>
-                  )}
-                  {currentValue <= currentUser.gameState.stack && usersCount > usersAllin + 1 && (
-                    <button
-                      className='action__buttons__RaiseTo'
-                      onClick={() => handleBet({ _id, betSize: currentValue })}
-                    >
-                      {t('raise to')}
-                    </button>
-                  )}
-                </div>
-                {currentValue <= currentUser.gameState.stack && usersCount > usersAllin + 1 && (
-                  <div className='action__bar__slider'>
-                    <CustomizedSlider
-                      currentValue={currentValue}
-                      setCurrentValue={setCurrentValue}
-                      minValue={minBet}
-                      maxValue={maxBet}
-                    />
-                  </div>
-                )}
-              </div>
-            )}
-            <section className='tableroom__chat'>
-              <Chat />
-            </section>
-          </div>
+          )}
+          <section className='tableroom__chat'>
+            <Chat />
+          </section>
         </div>
       </div>
     </div>

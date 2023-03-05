@@ -101,7 +101,7 @@ export const RenderPlayer: React.FC<PlayersProps> = ({ users, timer }) => {
   return (
     <>
       {users.map((u, i) => (
-        <div className={`${'player'} ${'p' + [i]}`} key={i}>
+        <div className={`${'player'} ${'p' + [i]} ${user._id === u._id ? 'p_main' : ''}`} key={i}>
           {user._id === u._id && <div className='player__timer'>{timer}</div>}
           <div className='bank-plug'>
             {!!u.gameState.bet && (

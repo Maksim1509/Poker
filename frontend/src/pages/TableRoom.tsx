@@ -5,7 +5,7 @@ import './TableRoom.scss';
 const TableRoom = (): JSX.Element => {
   return (
     <>
-      <section className='tableroom__table'>
+      <section className='table-room'>
         <Table_poker />
       </section>
     </>
