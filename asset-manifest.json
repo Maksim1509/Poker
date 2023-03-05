@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.css": "/Poker/static/css/main.0e3d5763.css",
-    "main.js": "/Poker/static/js/main.dd2254b9.js",
+    "main.css": "/Poker/static/css/main.f9ed99ab.css",
+    "main.js": "/Poker/static/js/main.bb25503a.js",
     "static/media/background_music.mp3": "/Poker/static/media/background_music.93e116f09321a7e633bf.mp3",
-    "static/media/bakcpng-1.png": "/Poker/static/media/bakcpng-1.d938c0830217f6393247.png",
+    "static/media/main-background.png": "/Poker/static/media/main-background.d938c0830217f6393247.png",
     "static/media/poker_table.jpg": "/Poker/static/media/poker_table.763047e8ad1ba66b2c2a.jpg",
     "static/media/cardFacce.jpg": "/Poker/static/media/cardFacce.524cd9717711a18b353c.jpg",
-    "static/media/poker_table_small.jpg": "/Poker/static/media/poker_table_small.7c8f09ab5be06842e81e.jpg",
+    "static/media/mobile-table.jpg": "/Poker/static/media/mobile-table.6fb5d422cb558c53850e.jpg",
     "static/media/background_start_page1.jpg": "/Poker/static/media/background_start_page1.90e9a719143e04b5c755.jpg",
     "static/media/mentor.png": "/Poker/static/media/mentor.668d2d4c2868adf86e9b.png",
     "static/media/works.png": "/Poker/static/media/works.7e5280b57dfabeae57f0.png",
@@ -20,11 +20,11 @@
     "index.html": "/Poker/index.html",
     "static/media/Diamonds.svg": "/Poker/static/media/Diamonds.49c1324e7d23eb68a1aaa13983f76f46.svg",
     "static/media/Hearts.svg": "/Poker/static/media/Hearts.3ad48f31af5b78a0c9c61b44dddbc735.svg",
-    "main.0e3d5763.css.map": "/Poker/static/css/main.0e3d5763.css.map",
-    "main.dd2254b9.js.map": "/Poker/static/js/main.dd2254b9.js.map"
+    "main.f9ed99ab.css.map": "/Poker/static/css/main.f9ed99ab.css.map",
+    "main.bb25503a.js.map": "/Poker/static/js/main.bb25503a.js.map"
   },
   "entrypoints": [
-    "static/css/main.0e3d5763.css",
-    "static/js/main.dd2254b9.js"
+    "static/css/main.f9ed99ab.css",
+    "static/js/main.bb25503a.js"
   ]
 }
